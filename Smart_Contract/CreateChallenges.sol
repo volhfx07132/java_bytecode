@@ -1,7 +1,7 @@
 pragma solidity 0.5.16;
-import "./Challenge.sol";
+import "./ChallengeDetails.sol";
 
-contract Challenges{
+contract CreateChallenges{
     using SafeMath for uint256;
     /**
      * @dev Value send to contract should be equal with `amount`.
