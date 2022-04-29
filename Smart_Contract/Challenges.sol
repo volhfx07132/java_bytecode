@@ -1,9 +1,7 @@
 pragma solidity 0.5.16;
-import "./SafeMath.sol";
-import "./ERC20.sol";
 import "./Challenge.sol";
 
-contract Challenges is ERC20 {
+contract Challenges{
     using SafeMath for uint256;
     /**
      * @dev Value send to contract should be equal with `amount`.
@@ -50,13 +48,8 @@ contract Challenges is ERC20 {
             _allowGiveUp,
             _gasData,
             _allAwardToSponsorWhenGiveUp
-        );
-        
-        if (_stakeHolders[3] == address(this)) {
-            transfer(address(newChallengeAddress), _totalReward + _gasData[0]);
-        } else {
-            IERC20(_stakeHolders[3]).transferFrom(msg.sender, address(newChallengeAddress), _totalReward + _gasData[0]);
-        }
+        );      
+        IERC20(_stakeHolders[3]).transferFrom(msg.sender, address(newChallengeAddress), _totalReward + _gasData[0]);
         return address(newChallengeAddress);
     }
 }
