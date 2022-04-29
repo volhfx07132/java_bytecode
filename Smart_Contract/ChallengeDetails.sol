@@ -18,7 +18,7 @@ import "./ERC20.sol";
  * class of bugs, so it's recommended to use it always.
  */
 
-contract ChallengeDetails{
+contract Challenge{
     using SafeMath for uint256;
 
     /** @param ChallengeState currentState of challenge:
